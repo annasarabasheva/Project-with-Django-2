@@ -30,6 +30,12 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+PROJECT_MADE_APPS = [
+    'PersonalProject.common',
+    'PersonalProject.accounts',
+    'PersonalProject.pets',
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+] + PROJECT_MADE_APPS
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
