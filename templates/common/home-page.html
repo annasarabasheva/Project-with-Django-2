@@ -1,51 +1,50 @@
+{% extends 'common/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>PetCare Connect</title>
-</head>
-<body>
+
+{% block content %}
 
 <header>
+    <div class="logo">
+        <img src="{% static 'images/pet-logo.png' %}" alt="PetCare Logo">
+    </div>
     <h1>Welcome to PetCare Connect</h1>
     <p>Connecting pet owners with trusted caregivers</p>
     <nav>
-        <a href="#features">Features</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
+        <a href="#">Features</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
     <h2>Find the Perfect Caregiver for Your Pet</h2>
     <p>Safe, reliable, and community-driven pet care at your fingertips.</p>
+    <button class="cta-button">Get Started</button>
 </section>
 
 <section id="features" class="features">
+    <h2>Our Features</h2>
     <div class="feature">
+        <img src="{% static 'images/pet-profile-icon.png' %}" alt="Pet Profiles">
         <h3>Pet Profiles</h3>
         <p>Create detailed profiles for your pets with all their needs.</p>
     </div>
     <div class="feature">
+        <img src="{% static 'images/caregiver-icon.png' %}" alt="Trusted Caregivers">
         <h3>Trusted Caregivers</h3>
         <p>Find top-rated caregivers in your area with verified reviews.</p>
     </div>
     <div class="feature">
+        <img src="{% static 'images/updates-icon.png' %}" alt="Real-Time Updates">
         <h3>Real-Time Updates</h3>
         <p>Get photos and messages while your pet is in care.</p>
     </div>
     <div class="feature">
+        <img src="{% static 'images/calendar-icon.png' %}" alt="Easy Scheduling">
         <h3>Easy Scheduling</h3>
         <p>Use our calendar to book and manage pet care effortlessly.</p>
     </div>
 </section>
 
-<footer>
-    <p>&copy; 2025 PetCare Connect. All Rights Reserved.</p>
-</footer>
 
-</body>
-</html>
+{% endblock %}
