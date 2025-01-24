@@ -1,3 +1,5 @@
-@import 'home.css';
-@import 'navigation.css';
-@import 'about-us.css';
+@import 'common/home.css';
+@import 'common/navigation.css';
+@import 'common/about-us.css';
+@import 'accounts/login-page.css';
+@import 'accounts/register-page.css';

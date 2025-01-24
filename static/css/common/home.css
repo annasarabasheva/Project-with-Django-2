@@ -33,7 +33,7 @@ header .logo img {
 .hero {
     text-align: center;
     padding: 2.7em;
-    background: url('../images/pet-background.jpg') no-repeat center center/cover;
+    background: url('../../images/pet-background.jpg') no-repeat center center/cover;
     color: #f5f2f2;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -107,9 +107,9 @@ header .logo img {
 
 
 footer {
-    background-color: #4a4a4a;
+    background-color: #a87a55;
     color: white;
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
 }
 
