@@ -17,9 +17,11 @@
 <section id="features" class="features">
     <h2>Our Features</h2>
     <div class="feature">
-        <img src="{% static 'images/pet-profile-icon.png' %}" alt="Pet Profiles">
-        <h3>Pet Profiles</h3>
-        <p>Create detailed profiles for your pets with all their needs.</p>
+        <a href="{% url 'create-pet-profile' %}" class="feature-link">
+            <img src="{% static 'images/pet-profile-icon.png' %}" alt="Pet Profiles">
+            <h3>Pet Profiles</h3>
+            <p>Create detailed profiles for your pets with all their needs.</p>
+        </a>
     </div>
     <div class="feature">
         <img src="{% static 'images/caregiver-icon.png' %}" alt="Trusted Caregivers">

@@ -1,0 +1,31 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="pet-profile-container">
+    <div class="pet-profile-card">
+        <h2>Create Your Pet's Profile</h2>
+        <p>Let others know more about your furry friend!</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="input-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="error-message">
+                            {% for error in field.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <button type="submit" class="submit-button">Create Profile</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
