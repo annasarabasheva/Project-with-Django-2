@@ -11,6 +11,7 @@
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href={% url 'about' %}>About Us</a></li>
+            <li><a href={% url 'dashboard' %}>Pets Profiles</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
             {% if user.is_authenticated %}
