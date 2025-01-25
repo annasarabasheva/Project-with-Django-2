@@ -1,25 +1,22 @@
-/* General Container */
 .pet-profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    background-color: #fff8e1;
     padding: 2rem;
 }
 
-/* Card */
 .pet-profile-card {
     background: white;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     text-align: center;
 }
 
-/* Form Styling */
 .input-group {
     margin-bottom: 1.5rem;
     text-align: left;
@@ -35,7 +32,7 @@
 
 .input-group input,
 .input-group textarea {
-    width: 100%;
+    width: 95%;
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -59,11 +56,10 @@
     font-size: 0.9rem;
 }
 
-/* Submit Button */
 .submit-button {
-    width: 100%;
+    width: 40%;
     padding: 0.8rem;
-    background-color: #6c63ff;
+    background-color: #d0653b;
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -74,5 +70,5 @@
 }
 
 .submit-button:hover {
-    background-color: #574de0;
+    background-color: #9b4320;
 }
