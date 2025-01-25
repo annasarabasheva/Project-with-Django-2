@@ -1,0 +1,33 @@
+.pet-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.pet-profile-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.pet-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.pet-profile-card h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.pet-profile-card p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}

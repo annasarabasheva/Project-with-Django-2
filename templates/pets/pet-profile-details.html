@@ -1,0 +1,15 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="pet-profile-container">
+    <div class="pet-profile-card">
+        <img src="{{ pet.photo.url }}" alt="{{ pet.name }}" class="pet-photo">
+        <h1>{{ pet.name }}</h1>
+        <p><strong>Age:</strong> {{ pet.age }} years</p>
+        <p><strong>Breed:</strong> {{ pet.breed }}</p>
+        <p><strong>Description:</strong> {{ pet.description }}</p>
+        <p><strong>Care Needs:</strong> {{ pet.care_needs }}</p>
+    </div>
+</div>
+{% endblock %}
