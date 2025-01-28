@@ -13,23 +13,18 @@
 ## For Pet Owners
 - **Pet Profiles**: Add detailed profiles for pets, including age, breed, medical needs, and personality.
 - **Booking System**: Calendar-based system to schedule pet care with reminders.
-- **Emergency Info**: Share emergency contact and vet details with caregivers.
 
 ## For Caregivers
 - **Caregiver Verification**: Allow uploading certifications or references for trust.
 - **Availability Management**: Set availability through a calendar.
-- **Earnings Tracker**: Dashboard to track compensation.
 
 ## For Both Users
 - **In-App Messaging**: Secure communication between pet owners and caregivers.
 - **Location-Based Search**: Find nearby caregivers or pet owners.
-- **Real-Time Updates**: Caregivers can send photos or messages during the pet's stay.
 
 ## Advanced Features
 - **Ratings and Reviews**: Rate caregivers on specific categories like interaction and communication.
 - **Payment Integration**: Secure payment gateway for transactions.
-- **Pet Emergency Assistance**: List nearby emergency vet clinics or services.
-- **Community Features**: Enable pet stories, events, and meetups for user engagement.
 
 
 
