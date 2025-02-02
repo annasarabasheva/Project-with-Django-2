@@ -33,3 +33,8 @@ class PetProfileDetailView(LoginRequiredMixin, DetailView):
     model = PetProfile
     template_name = 'pets/pet-profile-details.html'
     context_object_name = 'pet'
+
+
+def my_pets(request):
+    pets = PetProfile.objects.filter(owner=request.user)
+    return render(request, 'pets/my-pets.html', {'pets': pets})
