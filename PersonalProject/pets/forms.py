@@ -13,6 +13,7 @@ class PetProfileForm(forms.ModelForm):
             'breed': forms.TextInput(attrs={'placeholder': 'Breed'}),
             'weight': forms.NumberInput(attrs={'placeholder': 'Weight in kg'}),
             'description': forms.Textarea(attrs={'placeholder': 'Describe your pet'}),
+            'photo': forms.TextInput(attrs={'placeholder': 'Photo URL'}),
         }
         labels = {
             'photo': 'Photo URL of your pet',

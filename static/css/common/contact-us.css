@@ -8,12 +8,12 @@
     text-align: center;
 }
 
-h2 {
+.contact-container h2 {
     font-size: 2rem;
     color: #333;
 }
 
-p {
+.contact-container p {
     font-size: 1rem;
     color: #555;
 }

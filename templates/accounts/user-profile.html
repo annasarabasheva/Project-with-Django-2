@@ -1,0 +1,11 @@
+{% extends 'common/base.html' %}
+{% block content %}
+
+<div class="profile-container">
+    <h2>🌟 My Profile</h2>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+</div>
+
+{% endblock %}
