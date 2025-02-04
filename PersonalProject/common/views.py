@@ -21,3 +21,5 @@ def contact_us(request):
         messages.success(request, "Your message has been sent!")
 
     return render(request, "common/contact-us.html")
+
+
