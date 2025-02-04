@@ -105,37 +105,55 @@ header .logo img {
     margin: 0.5rem 0;
 }
 
-
-footer {
-    background-color: #a87a55;
+.footer {
+    background: linear-gradient(to right, #8d6e63, #a87a55); /* Smooth brown gradient */
     color: white;
-    padding: 0.5rem;
+    padding: 1rem;
     text-align: center;
+    font-size: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-footer .social-media {
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .social-media {
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
+    margin: 0.8rem 0 0;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
-footer .social-media li {
+.footer .social-media li {
     display: inline-block;
+    transition: transform 0.3s ease-in-out;
 }
 
-footer .social-media img {
-    width: 30px;
-    height: 30px;
+.footer .social-media li:hover {
+    transform: scale(1.2);
+}
+
+.footer .social-media img {
+    width: 35px;
+    height: 35px;
     filter: invert(1);
+    transition: opacity 0.3s ease-in-out;
 }
 
-footer p {
-    margin: 0.5rem 0;
+.footer .social-media img:hover {
+    opacity: 0.7;
 }
-.feature-link {
-    text-decoration: none;
-    color: #4a4a4a;
+
+.footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    opacity: 0.9;
 }
