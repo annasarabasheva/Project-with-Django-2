@@ -54,3 +54,14 @@ def edit_pet_profile(request, pet_id):
         form = PetProfileForm(instance=pet)
 
     return render(request, "pets/edit-pet-profile.html", {"form": form, "pet": pet})
+
+
+@login_required
+def delete_pet_profile(request, pet_id):
+    pet = get_object_or_404(PetProfile, id=pet_id, owner=request.user)
+
+    if request.method == "POST":
+        pet.delete()
+        return redirect("my-pets")
+
+    return render(request, "pets/delete-pet-profile.html", {"pet": pet})
