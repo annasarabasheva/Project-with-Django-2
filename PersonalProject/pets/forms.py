@@ -18,3 +18,5 @@ class PetProfileForm(forms.ModelForm):
         labels = {
             'photo': 'Photo URL of your pet',
         }
+
+

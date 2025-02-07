@@ -4,6 +4,7 @@
 {% block content %}
 <div class="pet-profile-container">
     <div class="pet-profile-card">
+        <a href="{% url 'edit-pet-profile' pet.id %}" class="edit-btn">✏️ Edit Profile</a>
         <img src="{{ pet.photo}}" alt="{{ pet.name }}" class="pet-photo">
         <h1>{{ pet.name }}</h1>
         <p><strong>Age:</strong> {{ pet.age }} years</p>

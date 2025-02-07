@@ -1,0 +1,51 @@
+.edit-pet-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.save-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background: #218838;
+}
+
+.cancel-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 12px;
+    background: #dc3545;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.cancel-btn:hover {
+    background: #c82333;
+}

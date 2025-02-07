@@ -38,3 +38,19 @@ class PetProfileDetailView(LoginRequiredMixin, DetailView):
 def my_pets(request):
     pets = PetProfile.objects.filter(owner=request.user)
     return render(request, 'pets/my-pets.html', {'pets': pets})
+
+
+@login_required
+def edit_pet_profile(request, pet_id):
+    pet = get_object_or_404(PetProfile, id=pet_id, owner=request.user)
+
+    if request.method == "POST":
+        form = PetProfileForm(request.POST, instance=pet)
+        if form.is_valid():
+            form.save()
+            return redirect("pet-profile-details", pk=pet.id)
+
+    else:
+        form = PetProfileForm(instance=pet)
+
+    return render(request, "pets/edit-pet-profile.html", {"form": form, "pet": pet})
