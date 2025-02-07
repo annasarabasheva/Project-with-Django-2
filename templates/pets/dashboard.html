@@ -15,8 +15,6 @@
                 <a href="{% url 'pet-profile-details' pet.pk %}" class="view-details">View Profile</a>
             </div>
         </div>
-        {% empty %}
-        <p>No pets added yet. <a href="{% url 'create-pet-profile' %}">Add a new pet</a>.</p>
         {% endfor %}
     </div>
 </section>
