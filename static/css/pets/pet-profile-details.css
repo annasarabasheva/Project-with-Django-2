@@ -2,34 +2,62 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    min-height: 70vh;
+    padding: 20px;
 }
 
 .pet-profile-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    max-width: 600px;
-    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.edit-btn {
+    padding: 10px 15px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.edit-btn:hover {
+    background: #217dbb;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    padding: 10px 15px;
+    background: #e74c3c;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+    transform: scale(1.05);
 }
 
 .pet-photo {
-    display: block;
-    width: 95%;
+    width: 100%;
     height: auto;
+    max-height: 300px;
+    object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 1rem;
-
-}
-
-.pet-profile-card h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.pet-profile-card p {
-    font-size: 1.1rem;
-    margin: 0.5rem 0;
+    margin-bottom: 15px;
 }

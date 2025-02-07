@@ -1,35 +1,48 @@
 .profile-container {
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 20px;
+    max-width: 600px;
+    margin: 70px auto;
+    padding: 10px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.profile-container h2 {
-    font-size: 2rem;
-    color: #333;
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
-.profile-container p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-.logout-btn {
-    display: inline-block;
+.profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     margin-top: 15px;
+}
+
+.edit-btn {
     padding: 10px 15px;
-    background: #ff6f61;
+    background: #3498db;
     color: white;
     text-decoration: none;
     border-radius: 6px;
-    font-weight: bold;
-    transition: background 0.3s;
 }
 
-.logout-btn:hover {
-    background: #e65a50;
+.edit-btn:hover {
+    background: #217dbb;
+}
+
+.delete-btn {
+    padding: 10px 15px;
+    background: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
 }

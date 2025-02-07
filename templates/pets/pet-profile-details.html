@@ -4,13 +4,16 @@
 {% block content %}
 <div class="pet-profile-container">
     <div class="pet-profile-card">
-        <a href="{% url 'edit-pet-profile' pet.id %}" class="edit-btn">✏️ Edit Profile</a>
-        <a href="{% url 'delete-pet-profile' pet.id %}" class="delete-link">🗑️ Delete Pet</a>
-        <img src="{{ pet.photo}}" alt="{{ pet.name }}" class="pet-photo">
+        <img src="{{ pet.photo }}" alt="{{ pet.name }}" class="pet-photo">
         <h1>{{ pet.name }}</h1>
         <p><strong>Age:</strong> {{ pet.age }} years</p>
         <p><strong>Breed:</strong> {{ pet.breed }}</p>
         <p><strong>Description:</strong> {{ pet.description }}</p>
+        <div class="profile-actions">
+            <a href="{% url 'edit-pet-profile' pet.id %}" class="edit-btn">✏️ Edit Profile</a>
+            <a href="{% url 'delete-pet-profile' pet.id %}" class="delete-btn">🗑️ Delete Pet</a>
+        </div>
     </div>
 </div>
 {% endblock %}
+

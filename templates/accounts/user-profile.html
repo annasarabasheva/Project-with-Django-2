@@ -3,9 +3,21 @@
 
 <div class="profile-container">
     <h2>🌟 My Profile</h2>
+    {% if user.profile.profile_picture %}
+        <img src="{{ user.profile.profile_picture }}" alt="Profile Picture" class="profile-pic">
+    {% endif %}
+    {% if user.profile.first_name and user.profile.last_name %}
+        <p><strong>Name:</strong> {{ user.profile.first_name }} {{ user.profile.last_name }}</p>
+    {% endif %}
+
     <p><strong>Username:</strong> {{ user.username }}</p>
     <p><strong>Email:</strong> {{ user.email }}</p>
-    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+
+    <div class="profile-actions">
+        <a href="{% url 'edit-profile' %}" class="edit-btn">✏️ Edit Profile</a>
+        <a href="{% url 'delete-profile' %}" class="delete-btn">🗑️ Delete Profile</a>
+    </div>
+
 </div>
 
 {% endblock %}

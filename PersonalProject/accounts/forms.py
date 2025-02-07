@@ -21,4 +21,4 @@ class AppUserCreationForm(UserCreationForm):
 class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ('user', )
+        fields = ['first_name', 'last_name', 'profile_picture']

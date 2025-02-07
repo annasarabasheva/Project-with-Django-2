@@ -1,6 +1,6 @@
 .delete-container {
     max-width: 600px;
-    margin: 40px auto;
+    margin: 120px auto;
     padding: 20px;
     background: white;
     border-radius: 12px;
@@ -8,12 +8,12 @@
     text-align: center;
 }
 
-h2 {
+.delete-container h2 {
     font-size: 2rem;
     color: #d9534f;
 }
 
-p {
+.delete-container p {
     font-size: 1.2rem;
     color: #555;
 }

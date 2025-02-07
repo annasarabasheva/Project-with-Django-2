@@ -77,7 +77,11 @@ header .logo img {
     margin-bottom: 2rem;
     color: #4a4a4a;
 }
+.features a {
+    color: #4a4a4a;
+    text-decoration:none;
 
+}
 .feature {
     display: inline-block;
     width: 250px;
