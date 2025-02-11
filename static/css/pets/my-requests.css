@@ -1,0 +1,46 @@
+.request-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.pending {
+    color: #f39c12;
+    font-weight: bold;
+}
+.accepted {
+    color: #27ae60;
+    font-weight: bold;
+}
+.declined {
+    color: #e74c3c;
+    font-weight: bold;
+}
+.completed {
+    color: #2980b9;
+    font-weight: bold;
+}
+
+.accept-btn, .decline-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+.accept-btn {
+    background: #27ae60;
+}
+.accept-btn:hover {
+    background: #219150;
+}
+.decline-btn {
+    background: #e74c3c;
+}
+.decline-btn:hover {
+    background: #c0392b;
+}

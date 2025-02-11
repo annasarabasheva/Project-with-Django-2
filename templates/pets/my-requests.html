@@ -1,0 +1,39 @@
+{% extends 'common/base.html' %}
+{% block content %}
+
+<h2>📋 My Pet Care Requests</h2>
+
+<h3>Requests I Sent</h3>
+{% if sent_requests %}
+    {% for request in sent_requests %}
+        <div class="request-card">
+            <p><strong>Pet:</strong> {{ request.pet.name }}</p>
+            <p><strong>Caregiver:</strong> {{ request.caregiver.username }}</p>
+            <p><strong>Dates:</strong> {{ request.start_date }} - {{ request.end_date }}</p>
+            <p><strong>Status:</strong> <span class="{{ request.status|lower }}">{{ request.status }}</span></p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No requests sent yet.</p>
+{% endif %}
+
+<h3>Requests I Received</h3>
+{% if received_requests %}
+    {% for request in received_requests %}
+        <div class="request-card">
+            <p><strong>Pet:</strong> {{ request.pet.name }}</p>
+            <p><strong>Owner:</strong> {{ request.owner.username }}</p>
+            <p><strong>Dates:</strong> {{ request.start_date }} - {{ request.end_date }}</p>
+            <p><strong>Status:</strong> <span class="{{ request.status|lower }}">{{ request.status }}</span></p>
+
+            {% if request.status == "Pending" %}
+                <a href="{% url 'respond-pet-care' request.id 'accept' %}" class="accept-btn">✅ Accept</a>
+                <a href="{% url 'respond-pet-care' request.id 'decline' %}" class="decline-btn">❌ Decline</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No requests received yet.</p>
+{% endif %}
+
+{% endblock %}

@@ -13,6 +13,9 @@
             <a href="{% url 'edit-pet-profile' pet.id %}" class="edit-btn">✏️ Edit Profile</a>
             <a href="{% url 'delete-pet-profile' pet.id %}" class="delete-btn">🗑️ Delete Pet</a>
         </div>
+        {% if user.is_authenticated and pet.owner != user %}
+            <a href="{% url 'request-pet-care' pet.id %}" class="care-request-btn">📅 Request Pet Care</a>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

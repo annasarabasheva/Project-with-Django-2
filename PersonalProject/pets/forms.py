@@ -1,6 +1,6 @@
 from django import forms
 
-from PersonalProject.pets.models import PetProfile
+from PersonalProject.pets.models import PetProfile, PetCareRequest
 
 
 class PetProfileForm(forms.ModelForm):
@@ -20,3 +20,11 @@ class PetProfileForm(forms.ModelForm):
         }
 
 
+class PetCareRequestForm(forms.ModelForm):
+    class Meta:
+        model = PetCareRequest
+        fields = ['caregiver', 'start_date', 'end_date', 'message']
+        widgets = {
+            'start_date': forms.DateInput(attrs={'type': 'date'}),
+            'end_date': forms.DateInput(attrs={'type': 'date'}),
+        }
