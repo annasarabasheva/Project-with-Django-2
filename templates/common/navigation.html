@@ -13,6 +13,7 @@
             <li><a href={% url 'about' %}>📖 About Us</a></li>
             <li><a href={% url 'dashboard' %}>🐇 Pets Profiles</a></li>
             <li><a href="{% url 'contact-us' %}">📞 Contact</a></li>
+            <li><a href="{% url 'faq' %}">❓ FAQ</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'my-pets' %}">🐾 My Pets</a></li>
                 <li><a href={% url 'my-requests' %}>🚪 My Requests</a></li>

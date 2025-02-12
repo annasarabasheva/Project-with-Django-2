@@ -84,7 +84,6 @@ def request_pet_care(request, pet_id):
     return render(request, "pets/request-pet-care.html", {"form": form, "pet": pet})
 
 
-
 @login_required
 def respond_to_pet_care_request(request, request_id, action):
     pet_care_request = get_object_or_404(PetCareRequest, id=request_id, caregiver=request.user)

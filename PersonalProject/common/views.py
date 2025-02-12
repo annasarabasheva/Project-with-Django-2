@@ -22,3 +22,11 @@ def contact_us(request):
     return render(request, "common/contact-us.html")
 
 
+def faq(request):
+    faqs = [
+        {"question": "How do I request pet care?", "answer": "Go to a pet profile and click 'Request Pet Care'."},
+        {"question": "Can I edit my pet’s profile?", "answer": "Yes, go to 'My Pets' and click 'Edit' on your pet's profile."},
+        {"question": "How do I delete my profile?", "answer": "You can delete your profile from the 'Edit Profile' page."},
+        {"question": "How can I contact support?", "answer": "Use the 'Contact Us' page to send us a message."},
+    ]
+    return render(request, "common/faq.html", {"faqs": faqs})
