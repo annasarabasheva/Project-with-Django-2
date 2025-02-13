@@ -41,7 +41,6 @@
     height: 100px;
 }
 
-/* Buttons */
 .care-request-container .submit-btn,
 .care-request-container .cancel-btn {
     padding: 12px 20px;
@@ -58,7 +57,8 @@
 .care-request-container .submit-btn {
     background: #4CAF50;
     color: white;
-    width: 200px;
+    width: 170px;
+    height: 50px;
 }
 
 .care-request-container .submit-btn:hover {
@@ -68,7 +68,8 @@
 .care-request-container .cancel-btn {
     background: #ff4b5c;
     color: white;
-    width: 120px;
+    width: 150px;
+
 }
 
 .care-request-container .cancel-btn:hover {

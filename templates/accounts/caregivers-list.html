@@ -1,0 +1,46 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <div class="title-caregivers">
+        <h2>🐾 Trusted Caregivers</h2>
+    </div>
+{% if caregivers %}
+    <div class="caregiver-list">
+        {% for caregiver in caregivers %}
+            <div class="caregiver-card">
+                {% if caregiver.profile_picture %}
+                    <img src="{{ caregiver.profile_picture }}" alt="Profile Picture" class="profile-pic">
+                {% endif %}
+                <h3>{{ caregiver.first_name }} {{ caregiver.last_name }}</h3>
+
+                <div class="info-row">
+                    <strong>Location:</strong>
+                    <span>{{ caregiver.location }}</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Experience:</strong>
+                    <span>{{ caregiver.experience }}</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Pet Owner:</strong>
+                    <span>{{ caregiver.pet_owner|yesno:"Yes,No" }}</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Age:</strong>
+                    <span>{{ caregiver.age }}</span>
+                </div>
+
+                <div class="bio">
+                    <strong>Bio:</strong>
+                    <p>{{ caregiver.bio }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No caregivers yet.</p>
+{% endif %}
+{% endblock %}

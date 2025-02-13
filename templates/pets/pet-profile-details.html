@@ -9,11 +9,13 @@
         <p><strong>Age:</strong> {{ pet.age }} years</p>
         <p><strong>Breed:</strong> {{ pet.breed }}</p>
         <p><strong>Description:</strong> {{ pet.description }}</p>
-        <div class="profile-actions">
-            <a href="{% url 'edit-pet-profile' pet.id %}" class="edit-btn">✏️ Edit Profile</a>
-            <a href="{% url 'delete-pet-profile' pet.id %}" class="delete-btn">🗑️ Delete Pet</a>
-        </div>
+        <p><strong>Owner:</strong> {{ pet.owner }}</p>
+
         {% if user.is_authenticated and pet.owner == user %}
+             <div class="profile-actions">
+                <a href="{% url 'edit-pet-profile' pet.id %}" class="edit-btn">✏️ Edit Profile</a>
+                <a href="{% url 'delete-pet-profile' pet.id %}" class="delete-btn">🗑️ Delete Pet</a>
+            </div>
             <a href="{% url 'request-pet-care' pet.id %}" class="care-request-btn">📅 Request Pet Care</a>
         {% endif %}
     </div>

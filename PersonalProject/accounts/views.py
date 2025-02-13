@@ -5,7 +5,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
-from PersonalProject.accounts.forms import AppUserCreationForm, ProfileEditForm
+from PersonalProject.accounts.forms import AppUserCreationForm, ProfileEditForm, CaregiverSignupForm
+from PersonalProject.accounts.models import Profile
 from PersonalProject.pets.models import PetProfile
 
 UserModel = get_user_model()
@@ -59,3 +60,21 @@ def delete_profile(request):
         return redirect("home")
 
     return render(request, "accounts/delete-profile.html")
+
+
+@login_required
+def become_caregiver(request):
+    if request.method == "POST":
+        form = CaregiverSignupForm(instance=request.user.profile, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("caregivers-list")
+    else:
+        form = CaregiverSignupForm(instance=request.user.profile)
+
+    return render(request, "accounts/become-caregiver.html", {"form": form})
+
+
+def caregivers_list(request):
+    caregivers = Profile.objects.filter(is_caregiver=True)
+    return render(request, "accounts/caregivers-list.html", {"caregivers": caregivers})

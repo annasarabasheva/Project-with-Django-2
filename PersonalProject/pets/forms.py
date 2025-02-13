@@ -35,5 +35,7 @@ class PetCareRequestForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
+
         if user:
-            self.fields['caregiver'].queryset = UserModel.objects.exclude(id=user.id)
+            self.fields['caregiver'].queryset = UserModel.objects.filter(profile__is_caregiver=True).exclude(id=user.id)
+

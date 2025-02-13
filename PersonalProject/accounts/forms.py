@@ -22,3 +22,22 @@ class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['first_name', 'last_name', 'profile_picture']
+
+
+class CaregiverSignupForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ["first_name", "last_name", "age", "bio", "experience", "pet_owner", "location"]
+
+    pet_owner = forms.ChoiceField(
+        choices=[(True, "Yes"), (False, "No")],
+        widget=forms.RadioSelect,
+        label="Do you have a pet?"
+    )
+
+    def save(self, commit=True):
+        profile = super().save(commit=False)
+        profile.is_caregiver = True
+        if commit:
+            profile.save()
+        return profile

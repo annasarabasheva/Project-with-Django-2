@@ -24,9 +24,11 @@
         </a>
     </div>
     <div class="feature">
-        <img src="{% static 'images/caregiver-icon.png' %}" alt="Trusted Caregivers">
-        <h3>Trusted Caregivers</h3>
-        <p>Find top-rated caregivers in your area with verified reviews.</p>
+        <a href="{% url 'become-caregiver' %}" class="caregiver-link">
+            <img src="{% static 'images/caregiver-icon.png' %}" alt="Trusted Caregivers">
+            <h3>Want to be a Caregiver ?</h3>
+            <p>Fill out this form and help our petowners.</p>
+        </a>
     </div>
     <div class="feature">
         <img src="{% static 'images/updates-icon.png' %}" alt="Real-Time Updates">
