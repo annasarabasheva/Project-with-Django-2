@@ -1,46 +1,95 @@
+.requests-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.requests-container h2,
+.requests-container h3 {
+    color: #333;
+    margin-bottom: 25px;
+}
+.requests-container h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+.requests-container h3 {
+    font-size: 20px;
+    text-decoration: underline;
+}
 .request-card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
+    background: rgba(222, 233, 250, 0.59);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.37);
+    margin-bottom: 20px;
+    text-align: left;
+    border-left: 6px solid rgba(161, 198, 245, 0.52);
+    transition: transform 0.2s ease-in-out;
+}
+
+.request-card:hover {
+    transform: scale(1.02);
 }
 
 .pending {
     color: #f39c12;
     font-weight: bold;
 }
+
 .accepted {
     color: #27ae60;
     font-weight: bold;
 }
+
 .declined {
     color: #e74c3c;
     font-weight: bold;
 }
+
 .completed {
     color: #2980b9;
     font-weight: bold;
 }
 
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
 .accept-btn, .decline-btn {
     display: inline-block;
-    padding: 8px 12px;
+    padding: 10px 16px;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 6px;
-    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    min-width: 120px;
 }
+
+
 .accept-btn {
     background: #27ae60;
 }
+
 .accept-btn:hover {
     background: #219150;
 }
+
 .decline-btn {
     background: #e74c3c;
 }
+
 .decline-btn:hover {
     background: #c0392b;
 }
+

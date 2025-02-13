@@ -16,7 +16,7 @@
             <li><a href="{% url 'faq' %}">❓ FAQ</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'my-pets' %}">🐾 My Pets</a></li>
-                <li><a href={% url 'my-requests' %}>🚪 My Requests</a></li>
+                <li><a href={% url 'my-requests' %}>📋 My Requests</a></li>
                 <li><a href="{% url 'user-profile' %}">🌟 Profile</a></li>
                 <li><a href={% url 'logout' %}>🚪 Logout</a></li>
             {% else %}

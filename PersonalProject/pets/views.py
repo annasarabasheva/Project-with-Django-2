@@ -70,7 +70,7 @@ def request_pet_care(request, pet_id):
     pet = get_object_or_404(PetProfile, id=pet_id)
 
     if request.method == "POST":
-        form = PetCareRequestForm(request.POST)
+        form = PetCareRequestForm(request.POST, user=request.user)
         if form.is_valid():
             pet_care_request = form.save(commit=False)
             pet_care_request.owner = request.user
@@ -79,7 +79,7 @@ def request_pet_care(request, pet_id):
             return redirect("my-requests")
 
     else:
-        form = PetCareRequestForm()
+        form = PetCareRequestForm(user=request.user)
 
     return render(request, "pets/request-pet-care.html", {"form": form, "pet": pet})
 
