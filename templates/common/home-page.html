@@ -36,9 +36,11 @@
         <p>Get photos and messages while your pet is in care.</p>
     </div>
     <div class="feature">
-        <img src="{% static 'images/calendar-icon.png' %}" alt="Easy Scheduling">
-        <h3>Easy Scheduling</h3>
-        <p>Use our calendar to book and manage pet care effortlessly.</p>
+        <a href="{% url 'calendar' %}" class="caregiver-link">
+            <img src="{% static 'images/calendar-icon.png' %}" alt="Easy Scheduling">
+            <h3>My Calendar</h3>
+            <p>Stay organized and never miss an important caregiving day again!</p>
+        </a>
     </div>
 </section>
 

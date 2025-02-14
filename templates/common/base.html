@@ -24,17 +24,19 @@
     {% block content %}
     {% endblock %}
 
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 PetCare Connect. All Rights Reserved.</p>
+   {% if request.resolver_match.url_name != "calendar" %}
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 PetCare Connect. All Rights Reserved.</p>
 
-            <ul class="social-media">
-                <li><a href="#"><img src="{% static 'images/facebook.png' %}" alt="Facebook"></a></li>
-                <li><a href="#"><img src="{% static 'images/twitter.png' %}" alt="Twitter"></a></li>
-                <li><a href="#"><img src="{% static 'images/instagram.png' %}" alt="Instagram"></a></li>
-            </ul>
-        </div>
-    </footer>
+                <ul class="social-media">
+                    <li><a href="#"><img src="{% static 'images/facebook.png' %}" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="{% static 'images/twitter.png' %}" alt="Twitter"></a></li>
+                    <li><a href="#"><img src="{% static 'images/instagram.png' %}" alt="Instagram"></a></li>
+                </ul>
+            </div>
+        </footer>
+   {% endif %}
 
 </body>
 </html>

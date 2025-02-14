@@ -1,0 +1,27 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="title-container">
+            <h2>Calendar</h2>
+        </div>
+
+        <div class="button-container">
+            <a class="btn btn-info back-button" href="{% url 'calendar' %}">Back to Calendar</a>
+        </div>
+
+        <div class="form-container">
+            <form method="post" class="event-form">
+                {% csrf_token %}
+                <table class="form form-table">
+                    {{ form }}
+                    <tr>
+                        <td colspan="2" class="submit-btn-container">
+                            <button type="submit" class="btn btn-info submit-btn">Submit</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+{% endblock %}
