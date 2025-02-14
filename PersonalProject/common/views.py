@@ -1,5 +1,5 @@
 import calendar
-from datetime import timedelta, date, datetime
+from datetime import timedelta, datetime
 
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
