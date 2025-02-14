@@ -2,10 +2,32 @@
 {% block content %}
 
 <div class="container">
-    <h1>About Us</h1>
+    <h1> About Us </h1>
     <p>Discover the story behind PetCare Connect and our mission to connect pet owners with trusted caregivers.</p>
 </div>
 
+<section class="team">
+    <div class="container">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="https://static.vecteezy.com/system/resources/previews/004/439/692/non_2x/doodle-girl-character-drawing-cute-vector.jpg" alt="Team Member">
+                <h3>Anna Sarabasheva</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="https://static.vecteezy.com/system/resources/previews/004/439/696/non_2x/doodle-boy-character-drawing-cute-vector.jpg" alt="Team Member">
+                <h3>John Doe</h3>
+                <p>CTO</p>
+            </div>
+            <div class="team-member">
+                <img src="https://static.vecteezy.com/system/resources/previews/004/439/691/non_2x/avatar-doodle-profile-girl-character-vector.jpg" alt="Team Member">
+                <h3>Jane Smith</h3>
+                <p>Head of Operations</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="about-mission">
     <div class="container">
@@ -18,29 +40,6 @@
     </div>
 </section>
 
-<section class="team">
-    <div class="container">
-        <h2>Meet Our Team</h2>
-        <div class="team-members">
-            <div class="team-member">
-                <img src="https://via.placeholder.com/150" alt="Team Member">
-                <h3>Anna Sarabasheva</h3>
-                <p>Founder & CEO</p>
-            </div>
-            <div class="team-member">
-                <img src="https://via.placeholder.com/150" alt="Team Member">
-                <h3>John Doe</h3>
-                <p>CTO</p>
-            </div>
-            <div class="team-member">
-                <img src="https://via.placeholder.com/150" alt="Team Member">
-                <h3>Jane Smith</h3>
-                <p>Head of Operations</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="cta">
     <div class="container">
         <h2>Join Our Community</h2>
@@ -48,7 +47,7 @@
             Become a part of our growing community of pet lovers and caregivers. Together, we can ensure every pet
             receives the love and care they deserve.
         </p>
-        <a href="#" class="btn">Get in Touch</a>
+        <a href="{% url 'login' %}" class="btn">Get in Touch</a>
     </div>
 </section>
 
