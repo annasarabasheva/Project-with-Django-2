@@ -25,14 +25,15 @@ class AppUserRegisterView(CreateView):
     def form_valid(self, form):
         response = super().form_valid(form)
 
-        login(self.request, self.object)  # Auto Login after Register
+        login(self.request, self.object)
 
         return response
 
 
 @login_required
 def user_profile(request):
-    return render(request, "accounts/user-profile.html")
+    pets = PetProfile.objects.filter(owner=request.user)
+    return render(request, "accounts/user-profile.html", context={"pets": pets})
 
 
 @login_required
