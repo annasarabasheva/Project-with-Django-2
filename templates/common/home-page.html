@@ -34,9 +34,11 @@
         </a>
     </div>
     <div class="feature">
-        <img src="{% static 'images/updates-icon.png' %}" alt="Real-Time Updates">
-        <h3>Real-Time Updates</h3>
-        <p>Get photos and messages while your pet is in care.</p>
+        <a href="{% url 'forum_home' %}" class="caregiver-link">
+            <img src="{% static 'images/forum.png' %}" alt="Real-Time Updates">
+            <h3>Forum</h3>
+            <p>Engage in discussions, share advice, and connect through threads and posts related to pet care.</p>
+        </a>
     </div>
     <div class="feature">
         <a href="{% url 'calendar' %}" class="caregiver-link">

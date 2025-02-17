@@ -1,0 +1,36 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+<section class="forum-thread">
+    <h1 class="thread-title">{{ thread.title }}</h1>
+    <p class="thread-meta">Created by {{ thread.created_by }} on {{ thread.created_at }}</p>
+
+    <div class="post-container">
+        {% for post in posts %}
+            <div class="post-item">
+                <p class="post-content">{{ post.content }}</p>
+                <p class="post-meta">Posted by {{ post.created_by }} on {{ post.created_at }}</p>
+
+                <form action="{% url 'like_post' post.id %}" method="POST" class="like-form">
+                    {% csrf_token %}
+                    <button type="submit" class="like-button">
+                        Like
+                    </button>
+                </form>
+
+                <p class="post-likes">{{ post.likes }} Likes</p>
+            </div>
+        {% empty %}
+            <p>No posts in this thread yet.</p>
+        {% endfor %}
+    </div>
+
+    <form method="POST" class="create-post-form">
+        {% csrf_token %}
+        <textarea name="content" placeholder="Add your post here" class="post-textarea"></textarea>
+        <button type="submit" class="submit-post-button">Post</button>
+    </form>
+</section>
+
+{% endblock %}

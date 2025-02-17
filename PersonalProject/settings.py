@@ -36,6 +36,7 @@ PROJECT_MADE_APPS = [
     'PersonalProject.common',
     'PersonalProject.accounts',
     'PersonalProject.pets',
+    'PersonalProject.forum',
 ]
 
 INSTALLED_APPS = [
@@ -118,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Sofia'
 
 USE_I18N = True
 

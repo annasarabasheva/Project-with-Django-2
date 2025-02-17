@@ -1,0 +1,17 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<section class="forum-category">
+    <h1 class="category-title">{{ category.name }}</h1>
+    <p class="category-description">{{ category.description }}</p>
+
+    <ul class="thread-list">
+        {% for thread in threads %}
+            <li class="thread-item">
+                <a href="{% url 'thread_view' thread.id %}" class="thread-link">{{ thread.title }}</a> 
+                - Posted by <span class="author-name">{{ thread.created_by }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

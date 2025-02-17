@@ -1,0 +1,27 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<section class="forum-home">
+    <h1 class="forum-title">PetCare Forum</h1>
+
+    <div class="category-list">
+        {% for category in categories %}
+            <div class="category-item">
+                <a href="{% url 'category_view' category.id %}" class="category-link">
+                    <h2 class="category-title">{{ category.name }}</h2>
+                </a>
+                <div class="category-description">{{ category.description }}</div>
+                <div class="thread-list">
+                    {% for thread in category.threads.all %}
+                        <a href="{% url 'thread_view' thread.id %}" class="thread-link">{{ thread.title }}</a>
+                    {% empty %}
+                        <p>No threads yet, be the first to post!</p>
+                    {% endfor %}
+                </div>
+            </div>
+        {% empty %}
+            <p>No categories available at the moment.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

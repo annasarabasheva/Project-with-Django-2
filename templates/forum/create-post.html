@@ -1,0 +1,12 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<section class="create-post-section">
+    <h1 class="create-post-title">Create a New Post in "{{ thread.title }}"</h1>
+    <form method="POST" class="create-post-form">
+        {% csrf_token %}
+        <textarea name="content" placeholder="Write your post here" class="create-post-textarea"></textarea>
+        <button type="submit" class="submit-create-post-button">Submit Post</button>
+    </form>
+</section>
+{% endblock %}
