@@ -84,8 +84,8 @@ def caregivers_list(request):
 @login_required
 def rate_caregiver(request, caregiver_id):
     caregiver = get_object_or_404(Profile, user_id=caregiver_id, is_caregiver=True)
+    reviews = Rating.objects.filter(caregiver=caregiver).order_by('-created_at')
 
-    # Check if the user already rated this caregiver
     existing_rating = Rating.objects.filter(caregiver=caregiver, user=request.user).first()
 
     if request.method == "POST":
@@ -99,4 +99,9 @@ def rate_caregiver(request, caregiver_id):
     else:
         form = RatingForm(instance=existing_rating)
 
-    return render(request, "accounts/rate-caregiver.html", {"form": form, "caregiver": caregiver})
+    return render(request, "accounts/rate-caregiver.html", {
+        "form": form,
+        "caregiver": caregiver,
+        "reviews": reviews,
+    })
+

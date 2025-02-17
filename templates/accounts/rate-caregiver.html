@@ -2,20 +2,41 @@
 {% block content %}
 
 <div class="rate-container">
-    <h2>🌟 Rate {{ caregiver.first_name }} {{ caregiver.last_name }}</h2>
+    <h2 class="rate-heading">🌟 Rate {{ caregiver.first_name }} {{ caregiver.last_name }}</h2>
 
-    <form method="post">
+    <form method="post" class="rate-form">
         {% csrf_token %}
-        <label for="id_rating">Rating:</label>
-        {{ form.rating }}
 
-        <label for="id_review">Review:</label>
-        {{ form.review }}
+        <div class="form-group">
+            <label for="id_rating">Rating:</label>
+            {{ form.rating }}
+        </div>
 
-        <button type="submit" class="submit-btn">Submit Rating</button>
+        <div class="form-group">
+            <label for="id_review">Review:</label>
+            {{ form.review }}
+        </div>
+
+        <button type="submit" class="rate-submit-btn">Submit Rating</button>
     </form>
 
-    <a href="{% url 'caregivers-list' %}" class="back-btn">← Back to Caregivers</a>
+    <h3 class="reviews-title">📝 Reviews</h3>
+
+    {% if reviews %}
+        <div class="reviews-section-container">
+            {% for review in reviews %}
+                <div class="review-card-box">
+                    <p class="review-user"><strong>{{ review.user.username }}</strong> ⭐ {{ review.rating }}/5</p>
+                    <p class="review-text">{{ review.review }}</p>
+                    <span class="review-date-stamp">{{ review.created_at|date:"F d, Y" }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-reviews-text">No reviews yet. Be the first to leave one! ⭐</p>
+    {% endif %}
+
+    <a href="{% url 'caregivers-list' %}" class="back-link-btn">← Back to Caregivers</a>
 </div>
 
 {% endblock %}
