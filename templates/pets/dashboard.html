@@ -6,15 +6,11 @@
     <h1>All Pets</h1>
     <div class="pet-container">
         {% for pet in pets %}
-        <div class="pet-card">
-            <img src="{{ pet.photo }}" alt="{{ pet.name }}" class="pet-image">
-            <div class="pet-info">
-                <h2>{{ pet.name }}</h2>
-                <p>Age: {{ pet.age }}</p>
-                <p>Breed: {{ pet.breed }}</p>
-                <a href="{% url 'pet-profile-details' pet.pk %}" class="view-details">View Profile</a>
+        <a href="{% url 'pet-profile-details' pet.pk %}" class="pet-card-link">
+            <div class="pet-card">
+                <img src="{{ pet.photo }}" alt="{{ pet.name }}" class="pet-image">
             </div>
-        </div>
+        </a>
         {% endfor %}
     </div>
 </section>

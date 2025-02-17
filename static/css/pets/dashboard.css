@@ -47,6 +47,8 @@
 .pet-info {
     padding: 1rem;
     width: 100%;
+    background-color: lightgray;
+
 }
 
 .pet-info h2 {

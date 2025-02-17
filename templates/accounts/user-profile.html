@@ -25,12 +25,11 @@
         {% if pets %}
             <div class="pet-list">
                 {% for pet in pets %}
-                    <div class="pet-card">
-                        {% if pet.photo %}
-                            <img src="{{ pet.photo }}" alt="{{ pet.name }}" class="pet-pic">
-                        {% endif %}
-                        <p>{{ pet.name }}</p>
-                    </div>
+                    <a href="{% url 'pet-profile-details' pet.pk %}" class="pet-card-link">
+                        <div class="pet-card">
+                            <img src="{{ pet.photo }}" alt="{{ pet.name }}" class="pet-image">
+                        </div>
+                    </a>
                 {% endfor %}
             </div>
         {% else %}
