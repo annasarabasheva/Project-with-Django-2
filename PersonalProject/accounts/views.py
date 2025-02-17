@@ -1,12 +1,12 @@
 from django.contrib.auth import get_user_model, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
-from PersonalProject.accounts.forms import AppUserCreationForm, ProfileEditForm, CaregiverSignupForm
-from PersonalProject.accounts.models import Profile
+from PersonalProject.accounts.forms import AppUserCreationForm, ProfileEditForm, CaregiverSignupForm, RatingForm
+from PersonalProject.accounts.models import Profile, Rating
 from PersonalProject.pets.models import PetProfile
 
 UserModel = get_user_model()
@@ -77,5 +77,26 @@ def become_caregiver(request):
 
 
 def caregivers_list(request):
-    caregivers = Profile.objects.filter(is_caregiver=True)
+    caregivers = Profile.objects.filter(is_caregiver=True).exclude(user_id__isnull=True)
     return render(request, "accounts/caregivers-list.html", {"caregivers": caregivers})
+
+
+@login_required
+def rate_caregiver(request, caregiver_id):
+    caregiver = get_object_or_404(Profile, user_id=caregiver_id, is_caregiver=True)
+
+    # Check if the user already rated this caregiver
+    existing_rating = Rating.objects.filter(caregiver=caregiver, user=request.user).first()
+
+    if request.method == "POST":
+        form = RatingForm(request.POST, instance=existing_rating)
+        if form.is_valid():
+            rating = form.save(commit=False)
+            rating.user = request.user
+            rating.caregiver = caregiver
+            rating.save()
+            return redirect('caregivers-list')
+    else:
+        form = RatingForm(instance=existing_rating)
+
+    return render(request, "accounts/rate-caregiver.html", {"form": form, "caregiver": caregiver})

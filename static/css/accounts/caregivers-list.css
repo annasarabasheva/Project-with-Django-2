@@ -117,3 +117,15 @@
 .caregiver-card .info-row span {
     color: #333;
 }
+.rate-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    background: white;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    width: fit-content;
+}

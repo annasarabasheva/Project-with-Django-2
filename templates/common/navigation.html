@@ -12,6 +12,7 @@
             <li><a href="{% url 'home' %}">🏠 Home</a></li>
             <li><a href={% url 'about' %}>📖 About Us</a></li>
             <li><a href={% url 'dashboard' %}>🐇 Pets Profiles</a></li>
+            <li><a href={% url 'caregivers-list' %}>❤️ Caregivers</a></li>
             <li><a href="{% url 'contact-us' %}">📞 Contact</a></li>
             <li><a href="{% url 'faq' %}">❓ FAQ</a></li>
             {% if user.is_authenticated %}

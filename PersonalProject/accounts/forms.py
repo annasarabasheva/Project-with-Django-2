@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 
-from PersonalProject.accounts.models import Profile
+from PersonalProject.accounts.models import Profile, Rating
 
 UserModel = get_user_model()
 
@@ -41,3 +41,13 @@ class CaregiverSignupForm(forms.ModelForm):
         if commit:
             profile.save()
         return profile
+
+
+class RatingForm(forms.ModelForm):
+    class Meta:
+        model = Rating
+        fields = ['rating', 'review']
+        widgets = {
+            'rating': forms.Select(choices=[(i, f'{i} Stars') for i in range(1, 6)]),
+            'review': forms.Textarea(attrs={'placeholder': 'Leave a review...'}),
+        }
