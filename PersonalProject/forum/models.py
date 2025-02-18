@@ -28,11 +28,9 @@ class Post(models.Model):
     content = models.TextField()
     created_by = models.ForeignKey(UserModel, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    likes = models.IntegerField(default=0)
 
-    def like(self):
-        self.likes += 1
-        self.save()
+    def total_likes(self):
+        return self.likes.count()
 
     def __str__(self):
         return f'Post by {self.created_by} in thread {self.thread.title}'
@@ -46,3 +44,15 @@ class Reply(models.Model):
 
     def __str__(self):
         return f'Reply by {self.created_by} on post {self.post.id}'
+
+
+class Like(models.Model):
+    user = models.ForeignKey(UserModel, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="likes")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'post')
+
+    def __str__(self):
+        return f"{self.user} liked {self.post.id}"
