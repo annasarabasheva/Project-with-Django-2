@@ -14,12 +14,14 @@
 
                 <form action="{% url 'like_post' post.id %}" method="POST" class="like-form">
                     {% csrf_token %}
-                    <button type="submit" class="like-button">
-                        Like
-                    </button>
+                    {% if user in post.likes.all %}
+                        <button type="submit" class="like-button liked">Unlike</button>
+                    {% else %}
+                        <button type="submit" class="like-button">Like</button>
+                    {% endif %}
                 </form>
 
-                <p class="post-likes">{{ post.likes }} Likes</p>
+                <p class="post-likes">{{ post.total_likes }} Likes</p>
             </div>
         {% empty %}
             <p>No posts in this thread yet.</p>

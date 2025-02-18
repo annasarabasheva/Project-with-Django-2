@@ -1,7 +1,8 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 
 from PersonalProject.forum.forms import PostForm
-from PersonalProject.forum.models import Category, Thread, Post
+from PersonalProject.forum.models import Category, Thread, Post, Like
 
 
 def forum_home(request):
@@ -37,10 +38,17 @@ def thread_view(request, thread_id):
     })
 
 
+@login_required
 def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
-    post.likes += 1
-    post.save()
+
+    existing_like = Like.objects.filter(user=request.user, post=post).first()
+
+    if existing_like:
+        existing_like.delete()
+    else:
+        Like.objects.create(user=request.user, post=post)
+
     return redirect('thread_view', thread_id=post.thread.id)
 
 
