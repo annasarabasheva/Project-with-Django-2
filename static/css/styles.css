@@ -20,6 +20,10 @@
 @import 'forum/category.css';
 @import 'forum/forum-home.css';
 @import 'forum/thread.css';
+@import 'messaging/chat-list.css';
+@import 'messaging/chat-room.css';
+@import 'messaging/start-chat.css';
+
 
 
 

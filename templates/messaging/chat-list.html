@@ -1,16 +1,32 @@
 {% extends 'common/base.html' %}
+{% load static %}
 
 {% block content %}
-<h2>Your Chats</h2>
-<ul>
-    {% for chat in chats %}
-        <li>
-            <a href="{% url 'chat_room' chat.id %}">
-                Chat with {% if chat.participant_one == request.user %}{{ chat.participant_two.username }}{% else %}{{ chat.participant_one.username }}{% endif %}
-            </a>
-        </li>
-    {% empty %}
-        <p>No active chats.</p>
-    {% endfor %}
-</ul>
+    <div class="chat-container">
+        <h2 class="chat-title">Your Chats</h2>
+        <div>
+            {% if chats %}
+                <ul class="chat-list">
+                    {% for chat in chats %}
+                        <li class="chat-item">
+                            <a href="{% url 'chat_room' chat.id %}">
+                                Chat with
+                                {% if chat.participant_one == request.user %}
+                                    {{ chat.participant_two.username }}
+                                {% else %}
+                                    {{ chat.participant_one.username }}
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="no-chats">You have no chats yet.</p>
+            {% endif %}
+        </div>
+
+        <a href="{% url 'start_chat' %}">
+            <button class="start-chat-btn">Start a new Chat</button>
+        </a>
+    </div>
 {% endblock %}

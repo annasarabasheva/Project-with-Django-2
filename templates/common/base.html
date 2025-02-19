@@ -19,6 +19,14 @@
             </a>
             {% include 'common/navigation.html' %}
         </div>
+
+         <!-- Chat Icon -->
+        <div class="header-right">
+            <a href="{% url 'chat_list' %}" class="chat-icon">
+                <img src="{% static 'images/chat-icon.png' %}" alt="Chat" />
+            </a>
+        </div>
+
     </header>
 
     {% block content %}
