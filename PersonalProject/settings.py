@@ -37,6 +37,8 @@ PROJECT_MADE_APPS = [
     'PersonalProject.accounts',
     'PersonalProject.pets',
     'PersonalProject.forum',
+    'PersonalProject.messaging',
+
 ]
 
 INSTALLED_APPS = [
