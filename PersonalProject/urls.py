@@ -32,5 +32,5 @@ urlpatterns = [
     path('accounts/', include('PersonalProject.accounts.urls')),
     path('pets/', include('PersonalProject.pets.urls')),
     path('forum/', include('PersonalProject.forum.urls')),
-
+    path('messaging/', include('PersonalProject.messaging.urls')),
 ]

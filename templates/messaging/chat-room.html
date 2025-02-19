@@ -1,0 +1,23 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<h2>Chat with {% if room.participant_one == request.user %}{{ room.participant_two.username }}{% else %}{{ room.participant_one.username }}{% endif %}</h2>
+
+<div class="chat-messages">
+    {% for message in messages %}
+        <div class="{% if message.sender == request.user %}my-message{% else %}other-message{% endif %}">
+            <strong>{{ message.sender.username }}</strong>: {{ message.text }}
+            <br><small>{{ message.timestamp }}</small>
+        </div>
+    {% empty %}
+        <p>No messages yet.</p>
+    {% endfor %}
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send</button>
+</form>
+
+{% endblock %}

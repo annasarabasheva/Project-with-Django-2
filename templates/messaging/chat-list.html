@@ -1,0 +1,16 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<h2>Your Chats</h2>
+<ul>
+    {% for chat in chats %}
+        <li>
+            <a href="{% url 'chat_room' chat.id %}">
+                Chat with {% if chat.participant_one == request.user %}{{ chat.participant_two.username }}{% else %}{{ chat.participant_one.username }}{% endif %}
+            </a>
+        </li>
+    {% empty %}
+        <p>No active chats.</p>
+    {% endfor %}
+</ul>
+{% endblock %}
