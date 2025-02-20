@@ -3,18 +3,32 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #fff8e1;
+    background: rgba(255, 192, 192, 0.41);
     padding: 2rem;
 }
 
 .pet-profile-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1), -8px -8px 20px rgba(255, 255, 255, 0.7);
     width: 90%;
-    max-width: 1500px;
+    max-width: 550px;
     text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.pet-profile-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.pet-profile-card p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #666;
 }
 
 .input-group {
@@ -24,51 +38,59 @@
 
 .input-group label {
     display: block;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
-    color: #333;
     font-weight: bold;
+    color: #333;
 }
 
 .input-group input,
 .input-group textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    background: rgba(238, 214, 214, 0.42);
+    color: #333;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 0.6);
+    outline: none;
+    transition: all 0.3s ease-in-out;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
-    border-color: #6c63ff;
-    outline: none;
+    background: #ffffff;
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.1), inset -2px -2px 8px rgba(255, 255, 255, 0.7);
 }
 
 .error-message {
-    background-color: #ffe6e6;
-    color: #ff4d4d;
-    border: 1px solid #ff4d4d;
+    background-color: #ffefef;
+    color: #d9534f;
+    border: 1px solid #d9534f;
     border-radius: 8px;
     padding: 0.8rem;
     margin-top: 0.5rem;
     font-size: 0.9rem;
+    text-align: center;
 }
 
 .submit-button {
-    width: 40%;
-    padding: 0.8rem;
-    background-color: #d0653b;
-    color: white;
-    font-size: 1rem;
+    width: 50%;
+    padding: 1rem;
+    background: #ffffff;
+    color: #333;
+    font-size: 1.1rem;
     font-weight: bold;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
 }
 
 .submit-button:hover {
-    background-color: #9b4320;
+    background: #f4f4f4;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.7);
 }
