@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block content %}
-<div class="pet-profile-container">
-    <div class="pet-profile-card">
-        <h2>Create Your Pet's Profile</h2>
-        <p>Let others know more about your furry friend!</p>
+<div class="pet-form-wrapper">
+    <div class="pet-form-card">
+        <h2 class="pet-form-title">🐾 Create Your Pet's Profile</h2>
+        <p class="pet-form-subtitle">Introduce your furry companion to our community!</p>
 
         <form method="POST">
             {% csrf_token %}
 
             {% for field in form %}
-                <div class="input-group">
+                <div class="pet-form-group">
                     {{ field.label_tag }}
                     {{ field }}
                     {% if field.errors %}
-                        <div class="error-message">
+                        <div class="pet-error-message">
                             {% for error in field.errors %}
                                 <p>{{ error }}</p>
                             {% endfor %}
@@ -24,7 +24,7 @@
                 </div>
             {% endfor %}
 
-            <button type="submit" class="submit-button">Create Profile</button>
+            <button type="submit" class="pet-form-button">Create Profile</button>
         </form>
     </div>
 </div>

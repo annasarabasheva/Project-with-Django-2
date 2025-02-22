@@ -3,7 +3,7 @@
 
 {% block content %}
 <section class="dashboard">
-    <h1>All Pets</h1>
+    <h1>Meet our cute Pet Community</h1>
     <div class="pet-container">
         {% for pet in pets %}
         <a href="{% url 'pet-profile-details' pet.pk %}" class="pet-card-link">

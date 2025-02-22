@@ -4,21 +4,24 @@
 {% block content %}
 <div class="pet-profile-container">
     <div class="pet-profile-card">
-        <img src="{{ pet.photo }}" alt="{{ pet.name }}" class="pet-photo">
-        <h1>{{ pet.name }}</h1>
-        <p><strong>Age:</strong> {{ pet.age }} years</p>
-        <p><strong>Breed:</strong> {{ pet.breed }}</p>
-        <p><strong>Description:</strong> {{ pet.description }}</p>
-        <p><strong>Owner:</strong> {{ pet.owner }}</p>
+        <div class="pet-image-section">
+            <img src="{{ pet.photo }}" alt="{{ pet.name }}" class="pet-photo">
+        </div>
+        <div class="pet-info-section">
+            <h1>{{ pet.name }}</h1>
+            <p><strong>Age:</strong> {{ pet.age }} years</p>
+            <p><strong>Breed:</strong> {{ pet.breed }}</p>
+            <p><strong>Description:</strong> {{ pet.description }}</p>
+            <p><strong>Owner:</strong> {{ pet.owner }}</p>
 
-        {% if user.is_authenticated and pet.owner == user %}
-             <div class="profile-actions">
-                <a href="{% url 'edit-pet-profile' pet.id %}" class="edit-btn">✏️ Edit Profile</a>
-                <a href="{% url 'delete-pet-profile' pet.id %}" class="delete-btn">🗑️ Delete Pet</a>
-            </div>
-            <a href="{% url 'request-pet-care' pet.id %}" class="care-request-btn">📅 Request Pet Care</a>
-        {% endif %}
+            {% if user.is_authenticated and pet.owner == user %}
+                <div class="profile-actions">
+                    <a href="{% url 'edit-pet-profile' pet.id %}" class="edit-btn">✏️ Edit Profile</a>
+                    <a href="{% url 'delete-pet-profile' pet.id %}" class="delete-btn">🗑️ Delete Pet</a>
+                </div>
+                <a href="{% url 'request-pet-care' pet.id %}" class="care-request-btn">📅 Request Pet Care</a>
+            {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}
-

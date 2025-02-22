@@ -1,25 +1,32 @@
 .forum-category {
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 4.5rem;
+    background: url('../../images/category-background.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .category-title {
-    font-size: 3rem;
-    color: #333;
+    font-size: 3.2rem;
+    color: white;
     margin-bottom: 1rem;
     text-align: center;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .category-description {
-    font-size: 1.2rem;
-    color: #777;
+    font-size: 1.3rem;
+    color: #719ede;
     margin-bottom: 2rem;
     text-align: center;
+    font-style: italic;
 }
 
 .thread-list {
@@ -29,18 +36,21 @@
 }
 
 .thread-item {
-    padding: 1.2rem;
-    border-bottom: 1px solid #ddd;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .thread-item:hover {
-    background-color: #f1f1f1;
+    background-color: rgba(255, 255, 255, 0.9);
     transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .thread-link {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #ff6f61;
     text-decoration: none;
     font-weight: bold;
@@ -49,11 +59,12 @@
 
 .thread-link:hover {
     color: #e65a50;
+    text-decoration: underline;
 }
 
 .author-name {
-    font-size: 1rem;
-    color: #555;
+    font-size: 1.2rem;
+    color: rgba(70, 145, 243, 0.66);
     margin-left: 0.5rem;
     font-style: italic;
 }

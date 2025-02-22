@@ -1,14 +1,34 @@
 .dashboard {
     padding: 2rem;
     background-color: #fff8e1;
+    margin-bottom: 3em;
 }
 
 .dashboard h1 {
     text-align: center;
-    color: #333;
     font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
     margin-bottom: 2rem;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    position: relative;
+    padding-bottom: 0.5rem;
 }
+
+.dashboard h1::after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 1.5px;
+    opacity: 0.8;
+}
+
 
 .pet-container {
     display: grid;

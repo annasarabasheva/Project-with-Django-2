@@ -1,26 +1,29 @@
 {% extends 'common/base.html' %}
+{% load static %}
 
 {% block content %}
-<section class="forum-home">
-    <h1 class="forum-title">PetCare Forum</h1>
+<section class="forum-container">
+    <h1 class="forum-header">PetCare Forum</h1>
 
-    <div class="category-list">
+    <div class="category-section">
         {% for category in categories %}
-            <div class="category-item">
+            <div class="category-card">
                 <a href="{% url 'category_view' category.id %}" class="category-link">
-                    <h2 class="category-title">{{ category.name }}</h2>
+                    <div class="category-info">
+                        <h2 class="category-name">{{ category.name }}</h2>
+                        <p class="category-description">{{ category.description }}</p>
+                    </div>
                 </a>
-                <div class="category-description">{{ category.description }}</div>
-                <div class="thread-list">
+                <div class="thread-links">
                     {% for thread in category.threads.all %}
                         <a href="{% url 'thread_view' thread.id %}" class="thread-link">{{ thread.title }}</a>
                     {% empty %}
-                        <p>No threads yet, be the first to post!</p>
+                        <p class="no-threads">Be the first to post a thread!</p>
                     {% endfor %}
                 </div>
             </div>
         {% empty %}
-            <p>No categories available at the moment.</p>
+            <p class="no-categories">No categories to show yet.</p>
         {% endfor %}
     </div>
 </section>
