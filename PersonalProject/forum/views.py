@@ -21,7 +21,14 @@ def forum_home(request):
 def category_view(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     threads = category.threads.all()
-    return render(request, 'forum/category.html', {'category': category, 'threads': threads})
+
+    if request.method == "POST":
+        title = request.POST.get("title")
+        if title:
+            Thread.objects.create(title=title, category=category, created_by=request.user)
+            return redirect("category_view", category_id=category.id)
+
+    return render(request, "forum/category.html", {"category": category, "threads": threads})
 
 
 def thread_view(request, thread_id):

@@ -5,6 +5,18 @@
     <h1 class="category-title">{{ category.name }}</h1>
     <p class="category-description">{{ category.description }}</p>
 
+    {% if user.is_authenticated %}
+        <button id="add-thread-btn" class="add-thread-button">Create New Thread</button>
+
+        <form id="thread-form" method="POST" class="thread-form hidden">
+            {% csrf_token %}
+            <label for="title">Thread Title</label>
+            <input type="text" name="title" id="title" required>
+
+            <button type="submit" class="submit-thread-button">Post Thread</button>
+        </form>
+    {% endif %}
+
     <ul class="thread-list">
         {% for thread in threads %}
             <li class="thread-item">
@@ -14,4 +26,98 @@
         {% endfor %}
     </ul>
 </section>
+
+<script>
+    document.getElementById("add-thread-btn").addEventListener("click", function () {
+        let form = document.getElementById("thread-form");
+        form.classList.toggle("hidden");
+
+        if (!form.classList.contains("hidden")) {
+            form.style.opacity = "1";
+            form.style.transform = "scale(1)";
+        } else {
+            form.style.opacity = "0";
+            form.style.transform = "scale(0.95)";
+        }
+    });
+</script>
+
+<style>
+    .hidden {
+        display: none;
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .add-thread-button {
+        background: linear-gradient(135deg, #719ede, #5e9be7);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1em;
+    }
+
+    .add-thread-button:hover {
+        background: linear-gradient(135deg, #4691f3, #5f8ec9);
+        transform: scale(1.05);
+        box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .thread-form {
+        margin-top: 15px;
+        padding: 15px;
+        border: 3px solid #5f8ec9;
+        border-radius: 10px;
+        background: #f9f9f9;
+        width: 50%;
+        margin-bottom: 1.5em;
+    }
+
+    .thread-form label {
+        font-weight: bold;
+        color: #4691f3;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .thread-form input {
+        width: 95%;
+        padding: 10px;
+        border: 2px solid #4188e0;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .submit-thread-button {
+        display: block;
+        background: linear-gradient(135deg, #a1c6f5, #719ede);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        width: 30%;
+    }
+
+    .submit-thread-button:hover {
+        background: linear-gradient(135deg, #4188e0, #4188e0);
+        transform: scale(1.05);
+    }
+
+
+</style>
+
 {% endblock %}
