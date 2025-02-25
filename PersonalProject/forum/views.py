@@ -1,13 +1,21 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 
-from PersonalProject.forum.forms import PostForm
+from PersonalProject.forum.forms import PostForm, CategoryForm
 from PersonalProject.forum.models import Category, Thread, Post, Like
 
 
 def forum_home(request):
     categories = Category.objects.all()
-    return render(request, 'forum/forum-home.html', {'categories': categories})
+    form = CategoryForm()
+
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('forum_home')
+
+    return render(request, 'forum/forum-home.html', {'categories': categories, 'form': form})
 
 
 def category_view(request, category_id):

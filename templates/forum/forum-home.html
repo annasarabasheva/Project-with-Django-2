@@ -5,6 +5,16 @@
 <section class="forum-container">
     <h1 class="forum-header">PetCare Forum</h1>
 
+    {% if user.is_authenticated %}
+        <button id="add-category-btn" class="add-category-button">Add Category</button>
+
+        <form id="category-form" method="POST" class="category-form hidden">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-category-button">Create Category</button>
+        </form>
+    {% endif %}
+
     <div class="category-section">
         {% for category in categories %}
             <div class="category-card">
@@ -14,17 +24,95 @@
                         <p class="category-description">{{ category.description }}</p>
                     </div>
                 </a>
-                <div class="thread-links">
-                    {% for thread in category.threads.all %}
-                        <a href="{% url 'thread_view' thread.id %}" class="thread-link">{{ thread.title }}</a>
-                    {% empty %}
-                        <p class="no-threads">Be the first to post a thread!</p>
-                    {% endfor %}
-                </div>
             </div>
         {% empty %}
             <p class="no-categories">No categories to show yet.</p>
         {% endfor %}
     </div>
 </section>
+
+<script>
+    document.getElementById('add-category-btn').addEventListener('click', function() {
+        document.getElementById('category-form').classList.toggle('hidden');
+    });
+</script>
+
+<style>
+    .hidden {
+        display: none;
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+
+    .category-form input, .category-form textarea {
+        width: 37%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 3px solid #4691f3;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .category-form textarea {
+     width: 40%;
+    }
+    .category-form label {
+        font-weight: bold;
+        font-size: 15px;
+        color: white;
+        display: block;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+
+    }
+
+    .add-category-button {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 1.5em;
+    }
+
+    .add-category-button:hover {
+        background: linear-gradient(135deg, #0056b3, #003d80);
+        transform: scale(1.05);
+        box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .submit-category-button {
+        background: linear-gradient(135deg, #719ede, #4188e0);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        width: 10%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .submit-category-button:hover {
+        background: linear-gradient(135deg, #4691f3, #4188e0);
+        transform: scale(1.05);
+    }
+
+</style>
+
 {% endblock %}
