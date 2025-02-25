@@ -45,6 +45,7 @@ In more detail **PetCare Connect** is a community-driven platform where:
 - **Threads and Posts Pages** – Displays discussion threads where users can participate in pet-related conversations.  
 - **My Calendar Page** – Allows caregivers to manage their availability and pet owners to track scheduled pet care sessions.  
 
+
 ### 🔒 Private Part  
 - **My Profile Page** – Users can view and manage their personal information, including their pet if they have one.  
 - **My Requests Page** – Pet owners and caregivers can view and manage their pet care requests, including pending and confirmed bookings.  
@@ -53,10 +54,10 @@ In more detail **PetCare Connect** is a community-driven platform where:
 - **Caregivers Page** – Authenticated users can rate specific caregivers and leave a review.
 - **Add Profile of Pet Form** – Lets pet owners add detailed profiles of their pets, including medical history and special requirements.  
 - **Create and Like Posts in Forum Page** – Registered users can start new discussion threads, reply to posts, and like helpful content.  
+- **Add new Category in Forum Page** – Registered users can add new categories in the forum page and the button for that will only be visible for them.  
+- **Add new Thread into specific Category** – Registered users can add new threads in each category they want and once again only they will be able to see the button for that.  
 - **Logout Page** – Allows users to log out of the application securely.  
 
-## Next steps:
--Add feature to create new categories and threads for authenticated users.
 
 ## 🛠️ **Technologies Used**
 - **Backend**: Django 4.2
