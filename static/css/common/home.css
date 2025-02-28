@@ -22,7 +22,7 @@ header .logo img {
     height: 60px;
 }
 
-.hero h1 {
+.home-hero h1 {
     font-size: 56px;
     text-align: center;
     color: #ffdbab;
@@ -30,7 +30,7 @@ header .logo img {
     margin-top: 1em;
 }
 
-.hero {
+.home-hero {
     text-align: center;
     padding: 2.7em;
     background: url('../../images/pet-background.jpg') no-repeat center center/cover;
@@ -38,19 +38,19 @@ header .logo img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.hero h2 {
+.home-hero h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
     margin-top: 3em;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
-.hero p {
+.home-hero p {
     font-size: 30px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
-.hero .cta-button {
+.home-hero .cta-button {
     background-color: #ff6f61;
     color: white;
     padding: 1rem 2rem;
@@ -61,7 +61,7 @@ header .logo img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.hero .cta-button:hover {
+.home-hero .cta-button:hover {
     background-color: #e53935;
 }
 
