@@ -1,54 +1,62 @@
 {% extends 'common/base.html' %}
 {% block content %}
 
-<div class="container">
-    <h1> About Us </h1>
-    <p>Discover the story behind PetCare Connect and our mission to connect pet owners with trusted caregivers.</p>
-</div>
+<section class="hero">
+    <div class="hero-content">
+        <h1>About PetCare Connect</h1>
+        <p>Your trusted network for pet care, connecting pet lovers with experienced caregivers.</p>
+    </div>
+</section>
+
+<section class="about">
+    <div class="about-content">
+        <div class="about-text">
+            <h2>Our Story</h2>
+            <p>PetCare Connect was founded with a mission to bridge the gap between pet owners and professional caregivers. We strive to create a safe, supportive, and loving environment for every pet.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1601758066233-2dc181fb3380?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Happy Pet">
+        </div>
+    </div>
+</section>
 
 <section class="team">
-    <div class="container">
-        <h2>Meet Our Team</h2>
-        <div class="team-members">
-            <div class="team-member">
-                <img src="https://static.vecteezy.com/system/resources/previews/004/439/692/non_2x/doodle-girl-character-drawing-cute-vector.jpg" alt="Team Member">
-                <h3>Anna Sarabasheva</h3>
-                <p>Founder & CEO</p>
-            </div>
-            <div class="team-member">
-                <img src="https://static.vecteezy.com/system/resources/previews/004/439/696/non_2x/doodle-boy-character-drawing-cute-vector.jpg" alt="Team Member">
-                <h3>John Doe</h3>
-                <p>CTO</p>
-            </div>
-            <div class="team-member">
-                <img src="https://static.vecteezy.com/system/resources/previews/004/439/691/non_2x/avatar-doodle-profile-girl-character-vector.jpg" alt="Team Member">
-                <h3>Jane Smith</h3>
-                <p>Head of Operations</p>
+    <h2>Meet the Team</h2>
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="https://static.vecteezy.com/system/resources/previews/004/439/692/non_2x/doodle-girl-character-drawing-cute-vector.jpg" alt="Anna Sarabasheva">
+            <h3>Anna Sarabasheva</h3>
+            <p>Founder & CEO</p>
+        </div>
+        <div class="team-card">
+            <img src="https://static.vecteezy.com/system/resources/previews/004/439/696/non_2x/doodle-boy-character-drawing-cute-vector.jpg" alt="John Doe">
+            <h3>John Doe</h3>
+            <p>CTO</p>
+        </div>
+        <div class="team-card">
+            <img src="https://static.vecteezy.com/system/resources/previews/004/439/691/non_2x/avatar-doodle-profile-girl-character-vector.jpg" alt="Jane Smith">
+            <h3>Jane Smith</h3>
+            <p>Head of Operations</p>
+        </div>
+    </div>
+</section>
+
+<section class="mission">
+    <div class="mission-content">
+        <div class="mission-text">
+            <h2>Our Mission</h2>
+            <p>We aim to build a strong pet-care community where pet owners can find reliable, loving caregivers with ease.</p>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1495953852792-8b6722cbd195?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Happy Pet">
             </div>
         </div>
     </div>
 </section>
 
-<section class="about-mission">
-    <div class="container">
-        <h2>Our Mission</h2>
-        <p>
-            At PetCare Connect, our mission is to create a safe and reliable community for pet owners to find trusted
-            caregivers. Whether you're planning a trip, stuck at work, or just need a helping hand, we're here to ensure
-            your beloved pets are in good hands.
-        </p>
-    </div>
-</section>
-
 <section class="cta">
-    <div class="container">
-        <h2>Join Our Community</h2>
-        <p>
-            Become a part of our growing community of pet lovers and caregivers. Together, we can ensure every pet
-            receives the love and care they deserve.
-        </p>
-        <a href="{% url 'contact-us' %}" class="btn">Get in Touch</a>
-    </div>
+    <h2>Join Us</h2>
+    <p>Be part of our growing pet-loving community and give your pets the care they deserve.</p>
+    <a href="{% url 'contact-us' %}" class="cta-button">Get in Touch</a>
 </section>
 
 {% endblock %}
